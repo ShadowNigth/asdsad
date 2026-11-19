@@ -1,0 +1,7 @@
+MODELOS ALTERNATIVOS (NO INSTALAR TODOS A LA VEZ)
+
+Cada subcarpeta guarda una variante GoldSrc v10 para un slot estándar o un modelo sin slot vanilla. Para elegir una variante, copia el archivo indicado a la carpeta cstrike/models/ y reemplaza el archivo del mismo nombre después de hacer una copia de seguridad.
+
+Ejemplo: alternatives/m_cs2_negev/models/v_m249.mdl -> models/v_m249.mdl
+
+El taser se guarda como v_taser.mdl, pero CS 1.6 vanilla no lo usa; requiere un mod/plugin. Las granadas Molotov/incendiaria/decoy solo cambian el aspecto del modelo que reemplazan, no agregan su comportamiento al juego.

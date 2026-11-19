@@ -1,0 +1,6 @@
+# Local build output and Python bytecode
+/dist/
+__pycache__/
+*.py[cod]
+/.cache/
+/work/

@@ -1,0 +1,16 @@
+source_addon,candidate_target,format,bodyparts,source_triangles,exported_sequences,bytes,note
+m_cs2_m4a1s,v_m4a1.mdl,GoldSrc IDST v10,20,45376,8,1443852,M4A1 silenciada: variante para el slot M4A1
+m_cs2_negev,v_m249.mdl,GoldSrc IDST v10,29,57091,5,1907984,Negev: variante para el slot M249
+m_cs2_mag7,v_m3.mdl,GoldSrc IDST v10,10,22788,4,837700,MAG-7: variante para el slot M3
+m_cs2_sawedoff,v_m3.mdl,GoldSrc IDST v10,6,13990,6,606744,Sawed-Off: variante para el slot M3
+m_cs2_bizon,v_mp5.mdl,GoldSrc IDST v10,13,26914,4,952688,Bizon: variante para el slot MP5
+m_cs2_mp7,v_mp5.mdl,GoldSrc IDST v10,14,29954,4,1053816,MP7: variante para el slot MP5
+m_cs2_cz75a,v_p228.mdl,GoldSrc IDST v10,10,22764,5,833864,CZ75-A: variante para el slot P228
+m_cs2_p2000,v_usp.mdl,GoldSrc IDST v10,7,15175,6,671720,P2000: variante para el slot USP
+m_cs2_revolver,v_deagle.mdl,GoldSrc IDST v10,15,32396,5,1058776,Revolver: variante para el slot Desert Eagle
+m_cs2_tec9,v_glock18.mdl,GoldSrc IDST v10,10,21872,6,825088,Tec-9: variante para el slot Glock
+m_cs2_grenade_decoy,v_hegrenade.mdl,GoldSrc IDST v10,5,11469,4,557832,Decoy: alternativa visual para el slot HE; la lógica sigue siendo HE
+m_cs2_grenade_incendary,v_hegrenade.mdl,GoldSrc IDST v10,5,11121,4,543180,Incendiary: alternativa visual para el slot HE; la lógica sigue siendo HE
+m_cs2_grenade_molotov,v_hegrenade.mdl,GoldSrc IDST v10,4,9222,4,1041620,Molotov: alternativa visual para el slot HE; la lógica sigue siendo HE
+m_cs2_taser,v_taser.mdl,GoldSrc IDST v10,4,8244,3,465188,Sin slot en CS 1.6 vanilla; requiere mod/plugin para usarse
+m_cs2_knife_kukri_t,v_knife.mdl,GoldSrc IDST v10,4,8874,10,494012,Kukri T: variante para el slot de cuchillo

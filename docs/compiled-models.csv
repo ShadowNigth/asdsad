@@ -1,0 +1,30 @@
+cs16_model,source_addon,format,bodyparts,source_triangles,exported_sequences,bytes,status
+v_ak47.mdl,m_cs2_ak47,GoldSrc IDST v10,13,29960,6,1058460,"CS16 sequence order specified: idle, fire1-3, reload, draw"
+v_m4a1.mdl,m_cs2_m4a4,GoldSrc IDST v10,21,45422,6,1509472,M4A4 viewmodel used for the M4A1 slot; source order mapped to basic CS16 actions
+v_aug.mdl,m_cs2_aug,GoldSrc IDST v10,23,57257,4,2354868,Candidate sequence mapping; untested in game
+v_awp.mdl,m_cs2_awp,GoldSrc IDST v10,18,39769,4,1386224,Candidate sequence mapping; untested in game
+v_famas.mdl,m_cs2_famas,GoldSrc IDST v10,14,32869,6,1124548,Candidate sequence mapping; untested in game
+v_g3sg1.mdl,m_cs2_g3sg1,GoldSrc IDST v10,21,47636,4,1709244,Candidate sequence mapping; untested in game
+v_sg552.mdl,m_cs2_sg556,GoldSrc IDST v10,25,52536,4,1751408,SG 556 viewmodel used for the SG-552 slot
+v_galil.mdl,m_cs2_galilar,GoldSrc IDST v10,19,41074,6,1360292,Candidate sequence mapping; untested in game
+v_scout.mdl,m_cs2_ssg08,GoldSrc IDST v10,22,49257,4,1681800,SSG 08 viewmodel used for the Scout slot
+v_m249.mdl,m_cs2_m249,GoldSrc IDST v10,30,58957,5,1951448,Candidate sequence mapping; untested in game
+v_mp5.mdl,m_cs2_mp5sd,GoldSrc IDST v10,16,37978,4,1201488,MP5-SD viewmodel used for the MP5 slot
+v_mac10.mdl,m_cs2_mac10,GoldSrc IDST v10,11,25855,6,939192,Candidate sequence mapping; untested in game
+v_tmp.mdl,m_cs2_mp9,GoldSrc IDST v10,12,28616,6,967276,MP9 viewmodel used for the TMP slot
+v_ump45.mdl,m_cs2_ump45,GoldSrc IDST v10,16,36076,6,1724820,Candidate sequence mapping; untested in game
+v_p90.mdl,m_cs2_p90,GoldSrc IDST v10,25,63246,4,2591332,Candidate sequence mapping; untested in game
+v_m3.mdl,m_cs2_nova,GoldSrc IDST v10,10,25908,6,938264,Nova viewmodel used for the M3 slot
+v_xm1014.mdl,m_cs2_xm1014,GoldSrc IDST v10,13,29982,6,1021736,Candidate sequence mapping; untested in game
+v_usp.mdl,m_cs2_usp,GoldSrc IDST v10,8,18918,9,761744,USP-S viewmodel used for the USP slot
+v_glock18.mdl,m_cs2_glock,GoldSrc IDST v10,7,15508,5,669260,Candidate sequence mapping; untested in game
+v_deagle.mdl,m_cs2_deagle,GoldSrc IDST v10,9,20228,6,798548,Candidate sequence mapping; untested in game
+v_p228.mdl,m_cs2_p250,GoldSrc IDST v10,7,16116,6,679716,P250 viewmodel used for the P228 slot
+v_fiveseven.mdl,m_cs2_fiveseven,GoldSrc IDST v10,11,24847,4,880904,Candidate sequence mapping; untested in game
+v_elite.mdl,m_cs2_elite,GoldSrc IDST v10,18,42368,7,1353552,Candidate sequence mapping; untested in game
+v_c4.mdl,m_cs2_c4,GoldSrc IDST v10,9,17937,5,744988,Candidate sequence mapping; untested in game
+v_hegrenade.mdl,m_cs2_grenade_he,GoldSrc IDST v10,4,10398,4,521136,Candidate sequence mapping; untested in game
+v_flashbang.mdl,m_cs2_grenade_flashbang,GoldSrc IDST v10,5,11469,4,557656,Candidate sequence mapping; untested in game
+v_smokegrenade.mdl,m_cs2_grenade_smoke,GoldSrc IDST v10,5,11121,4,543484,"CT smoke source variant; candidate, untested in game"
+v_knife.mdl,m_cs2_knife_kukri_ct,GoldSrc IDST v10,4,8874,10,494012,CT kukri viewmodel used for vanilla knife slot
+v_sg550.mdl,m_cs2_scar20,GoldSrc IDST v10,26,55076,4,1798368,SCAR-20 viewmodel used for the SG-550 slot; untested in game
