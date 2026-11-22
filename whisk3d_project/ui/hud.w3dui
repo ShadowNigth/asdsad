@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "nombre": "CS15_HUD",
+  "ventana": {
+    "igualQueRender": true,
+    "ancho": 960,
+    "alto": 540,
+    "escalaGlobal": 1,
+    "color": [0, 0, 0, 0]
+  },
+  "paletaActiva": 0,
+  "paletas": [
+    {
+      "nombre": "CS15",
+      "colores": [
+        { "nombre": "Fondo", "color": [0.0, 0.0, 0.0, 0.55] },
+        { "nombre": "Ambar", "color": [1.0, 0.68, 0.08, 1.0] },
+        { "nombre": "VerdeCS", "color": [0.22, 0.95, 0.35, 1.0] },
+        { "nombre": "Blanco", "color": [1.0, 1.0, 1.0, 1.0] }
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "ruta": "scripts/cs_hud.lua",
+      "refs": {
+        "txtHP": "TxtHP",
+        "txtArmor": "TxtArmor",
+        "txtAmmo": "TxtAmmo",
+        "txtMoney": "TxtMoney",
+        "txtTimer": "TxtTimer",
+        "txtScore": "TxtScore",
+        "txtBanner": "TxtBanner",
+        "panelBuy": "PanelBuy"
+      }
+    }
+  ],
+  "hijos": [
+    {
+      "tipo": "texto",
+      "nombre": "TxtHP",
+      "visible": true,
+      "pos": [-0.42, 0.42, 0],
+      "texto": "+ 100",
+      "tam": 28,
+      "color": [1.0, 0.68, 0.08, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtArmor",
+      "visible": true,
+      "pos": [-0.26, 0.42, 0],
+      "texto": "A 0",
+      "tam": 28,
+      "color": [1.0, 0.68, 0.08, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtTimer",
+      "visible": true,
+      "pos": [0.0, 0.42, 0],
+      "texto": "2:30",
+      "tam": 28,
+      "color": [1.0, 0.68, 0.08, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtScore",
+      "visible": true,
+      "pos": [0.0, -0.44, 0],
+      "texto": "CT 0 : 0 T",
+      "tam": 20,
+      "color": [0.22, 0.95, 0.35, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtMoney",
+      "visible": true,
+      "pos": [0.40, 0.34, 0],
+      "texto": "$ 800",
+      "tam": 26,
+      "color": [0.22, 0.95, 0.35, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtAmmo",
+      "visible": true,
+      "pos": [0.40, 0.42, 0],
+      "texto": "12 | 100",
+      "tam": 28,
+      "color": [1.0, 0.68, 0.08, 1.0]
+    },
+    {
+      "tipo": "texto",
+      "nombre": "TxtBanner",
+      "visible": true,
+      "pos": [0.0, -0.22, 0],
+      "texto": "",
+      "tam": 24,
+      "color": [1.0, 0.85, 0.25, 1.0]
+    },
+    {
+      "tipo": "contenedor",
+      "nombre": "PanelBuy",
+      "visible": false,
+      "pos": [-0.25, 0.0, 0],
+      "ancho": 0.35,
+      "alto": 0.50,
+      "hijos": [
+        {
+          "tipo": "texto",
+          "nombre": "BuyTitle",
+          "visible": true,
+          "pos": [0, -0.18, 0],
+          "texto": "BUY MENU: [1] AK-47  [2] M4A1  [3] AWP  [4] MP5  [5] DEAGLE",
+          "tam": 16,
+          "color": [1.0, 0.72, 0.12, 1.0]
+        }
+      ]
+    }
+  ]
+}

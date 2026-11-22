@@ -1,0 +1,121 @@
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0b0d10; font-family: 'Trebuchet MS', 'Segoe UI', sans-serif; color: #e8e2d0; }
+
+#glCanvas, #hudCanvas {
+    position: fixed; inset: 0; width: 100%; height: 100%; display: block;
+}
+#hudCanvas { pointer-events: none; z-index: 2; }
+
+.hidden { display: none !important; }
+
+.telemetry {
+    position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
+    z-index: 4; background: rgba(10, 14, 18, 0.72); border: 1px solid rgba(255, 184, 34, 0.35);
+    padding: 3px 10px; font: 11px monospace; color: #b9e2b9; border-radius: 3px; pointer-events: none;
+}
+
+.top-score {
+    position: fixed; top: 32px; left: 50%; transform: translateX(-50%);
+    z-index: 4; display: flex; gap: 14px; align-items: center;
+    background: rgba(0, 0, 0, 0.58); padding: 4px 14px; border-radius: 3px;
+    font: bold 13px monospace; pointer-events: none;
+}
+.top-score .ct { color: #7ec8ff; }
+.top-score .t  { color: #ff7a59; }
+.top-score .mid { color: #ffbb33; font-size: 12px; }
+
+.overlay-panel {
+    position: fixed; inset: 0; z-index: 10;
+    background: radial-gradient(circle at center, rgba(24, 28, 22, 0.92), rgba(10, 12, 10, 0.96));
+    display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
+}
+
+.cs-logo {
+    font-size: 36px; font-weight: 900; letter-spacing: 3px; color: #ffaa1d;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.85);
+}
+.cs-logo span { color: #f4efe0; font-weight: 400; font-size: 26px; }
+.cs-sub { font: 12px monospace; color: #95a88f; margin-bottom: 18px; }
+
+.menu-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    width: min(880px, 95vw); background: rgba(16, 20, 16, 0.88);
+    border: 1px solid #594b28; padding: 20px; border-radius: 4px;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.75);
+}
+.menu-col h3 { font-size: 13px; color: #ffbb33; margin: 10px 0 6px; letter-spacing: 1px; }
+.menu-col h3:first-child { margin-top: 0; }
+
+.cs-select {
+    width: 100%; padding: 8px 10px; background: #1c221c; color: #ffe1a8;
+    border: 1px solid #6b5930; font-size: 14px; border-radius: 3px; margin-bottom: 10px;
+}
+
+.controls-box {
+    margin-top: 10px; padding: 10px; background: rgba(0,0,0,0.45);
+    border: 1px solid #333a30; font-size: 12px; line-height: 1.65; color: #ccc6b4;
+}
+.controls-box code { color: #ffcb5c; background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 2px; }
+
+.team-btn {
+    display: block; width: 100%; text-align: left; padding: 8px 12px; margin-bottom: 5px;
+    background: rgba(34, 40, 34, 0.9); border: 1px solid #4c5244; color: #eee8d5;
+    font-size: 13px; font-weight: bold; cursor: pointer; border-radius: 3px; transition: 0.12s;
+}
+.team-btn:hover { background: #3b4634; border-color: #ffbb33; color: #ffcf6b; }
+.ct-btn { border-left: 4px solid #4eb8ff; }
+.t-btn  { border-left: 4px solid #ff6a45; }
+.auto-btn { border-left: 4px solid #ffbb33; text-align: center; background: #2f2818; }
+.resume-btn { border-left: 4px solid #66ee66; text-align: center; background: #1a2d1a; margin-top: 8px; }
+.sep { border: none; border-top: 1px solid #353b32; margin: 7px 0; }
+
+.buy-menu {
+    position: fixed; left: 26px; top: 50%; transform: translateY(-50%);
+    z-index: 8; width: 320px; background: rgba(12, 16, 12, 0.88);
+    border: 1px solid #8c6e2d; border-radius: 3px; padding: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+.buy-title { font-weight: bold; color: #ffbb33; border-bottom: 1px solid #594b28; padding-bottom: 6px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.buy-money { color: #66ee66; font-family: monospace; }
+.buy-item {
+    display: flex; justify-content: space-between; width: 100%;
+    padding: 7px 9px; margin-bottom: 4px; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,187,51,0.2); color: #f2ebd9; font-size: 13px; cursor: pointer; text-align: left;
+}
+.buy-item:hover:not(.disabled) { background: rgba(255, 187, 51, 0.22); border-color: #ffbb33; }
+.buy-item.disabled { opacity: 0.42; cursor: not-allowed; }
+.buy-price { color: #66ee66; font-family: monospace; }
+.buy-foot { font: 11px monospace; color: #aaa; margin-top: 6px; text-align: center; }
+
+.scoreboard {
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    z-index: 9; width: min(780px, 92vw); background: rgba(10, 14, 18, 0.90);
+    border: 1px solid #8c6e2d; padding: 14px; border-radius: 4px;
+}
+.sb-head { text-align: center; color: #ffbb33; font-weight: bold; margin-bottom: 10px; font-size: 14px; }
+.sb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sb-team { font-weight: bold; padding: 4px 8px; font-size: 13px; }
+.sb-team.ct { color: #7ec8ff; border-bottom: 2px solid #4eb8ff; }
+.sb-team.t  { color: #ff7a59; border-bottom: 2px solid #ff6a45; }
+.scoreboard table { width: 100%; border-collapse: collapse; font: 12px monospace; margin-top: 4px; }
+.scoreboard th, .scoreboard td { padding: 4px 6px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.scoreboard tr.dead { opacity: 0.55; }
+
+.console-panel {
+    position: fixed; left: 0; right: 0; top: 0; height: 42vh; z-index: 12;
+    background: rgba(16, 20, 18, 0.94); border-bottom: 2px solid #8c6e2d;
+    display: flex; flex-direction: column; font-family: monospace;
+}
+.con-head { background: #262c24; color: #ffbb33; padding: 5px 10px; font-size: 12px; font-weight: bold; }
+.con-log { flex: 1; overflow-y: auto; padding: 8px 12px; font-size: 12px; color: #d6e0d0; line-height: 1.45; }
+.con-form { display: flex; border-top: 1px solid #4a5242; }
+.con-form input {
+    flex: 1; background: #0f1310; border: none; color: #ffdf8c; padding: 8px 12px;
+    font: 13px monospace; outline: none;
+}
+
+.click-prompt {
+    position: fixed; bottom: 86px; left: 50%; transform: translateX(-50%);
+    z-index: 7; background: rgba(0, 0, 0, 0.78); color: #ffcb5c;
+    border: 1px solid #8c6e2d; padding: 7px 16px; border-radius: 3px; font-size: 13px; pointer-events: none;
+}

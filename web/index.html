@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter-Strike 1.5 Retail — Whisk3D Engine</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <canvas id="glCanvas"></canvas>
+    <canvas id="hudCanvas"></canvas>
+
+    <!-- Whisk3D Live Telemetry Pill -->
+    <div id="telemetry" class="telemetry">Whisk3D .w3dbsp | Loading...</div>
+
+    <!-- Top Score Strip -->
+    <div id="topScore" class="top-score">
+        <span class="ct">CT <b id="scCT">0</b></span>
+        <span class="mid" id="scMap">DE_DUST2</span>
+        <span class="t"><b id="scT">0</b> T</span>
+    </div>
+
+    <!-- Start / Team & Map Selection Overlay -->
+    <div id="teamMenu" class="overlay-panel">
+        <div class="cs-logo">COUNTER-STRIKE <span>1.5 RETAIL</span></div>
+        <div class="cs-sub">Powered by Whisk3D (.w3dbsp + PVS + GoldSrc Clipnodes + GLB)</div>
+
+        <div class="menu-grid">
+            <div class="menu-col">
+                <h3>1. SELECCIONAR MAPA (de_*)</h3>
+                <select id="mapSelect" class="cs-select"></select>
+
+                <h3>2. BOTS POR EQUIPO</h3>
+                <select id="botSelect" class="cs-select">
+                    <option value="4" selected>4 vs 4 (Recomendado)</option>
+                    <option value="2">2 vs 2</option>
+                    <option value="6">6 vs 6</option>
+                    <option value="0">0 vs 0 (Explorar Mapa)</option>
+                </select>
+
+                <div class="controls-box">
+                    <b>Controles CS 1.5:</b><br/>
+                    <code>WASD</code> Mover &nbsp;|&nbsp; <code>Space</code> Saltar / Bunnyhop<br/>
+                    <code>Shift</code> Caminar Sigilo &nbsp;|&nbsp; <code>Ctrl/C</code> Agachar<br/>
+                    <code>Click Izq</code> Disparar / Plantar C4<br/>
+                    <code>Click Der</code> Zoom / Silenciador / Rafaga / Stab<br/>
+                    <code>R</code> Recargar &nbsp;|&nbsp; <code>E</code> Plantar / Desactivar C4<br/>
+                    <code>B</code> Comprar &nbsp;|&nbsp; <code>F1</code> Autobuy &nbsp;|&nbsp; <code>1-5/Q/G</code> Armas<br/>
+                    <code>N</code> Vision Nocturna &nbsp;|&nbsp; <code>Tab</code> Score &nbsp;|&nbsp; <code>~</code> Consola
+                </div>
+            </div>
+
+            <div class="menu-col">
+                <h3>3. ELEGIR EQUIPO Y SKIN</h3>
+                <button class="team-btn ct-btn" data-team="CT" data-skin="urban">1. SEAL Team 6 (Counter-Terrorist)</button>
+                <button class="team-btn ct-btn" data-team="CT" data-skin="gsg9">2. GSG-9 (Counter-Terrorist)</button>
+                <button class="team-btn ct-btn" data-team="CT" data-skin="sas">3. SAS (Counter-Terrorist)</button>
+                <button class="team-btn ct-btn" data-team="CT" data-skin="gign">4. GIGN (Counter-Terrorist)</button>
+                <hr class="sep"/>
+                <button class="team-btn t-btn" data-team="T" data-skin="terror">5. Phoenix Connexion (Terrorist)</button>
+                <button class="team-btn t-btn" data-team="T" data-skin="leet">6. Elite Crew (Terrorist)</button>
+                <button class="team-btn t-btn" data-team="T" data-skin="arctic">7. Arctic Avengers (Terrorist)</button>
+                <button class="team-btn t-btn" data-team="T" data-skin="guerilla">8. Guerilla Warfare (Terrorist)</button>
+                <hr class="sep"/>
+                <button class="team-btn auto-btn" data-team="AUTO">9. Auto-Assign (Entrar Ya)</button>
+                <button id="btnResume" class="team-btn resume-btn hidden">Volver a la Partida (Click Canvas)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buy Menu (B) -->
+    <div id="buyMenu" class="buy-menu hidden"></div>
+
+    <!-- Scoreboard (Tab) -->
+    <div id="scoreboard" class="scoreboard hidden"></div>
+
+    <!-- Developer Console (~) -->
+    <div id="consolePanel" class="console-panel hidden">
+        <div class="con-head">Half-Life / CS 1.5 Console (ESC o ~ para cerrar)</div>
+        <div id="consoleLog" class="con-log"></div>
+        <form id="consoleForm" class="con-form">
+            <input id="consoleInput" type="text" placeholder="Ej: map de_inferno | bot_quota 5 | noclip | god | impulse 101 | sv_gravity 400" autocomplete="off" />
+        </form>
+    </div>
+
+    <div id="clickPrompt" class="click-prompt hidden">Click en la pantalla para capturar el ratón (ESC: Menú / Cambiar Mapa)</div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

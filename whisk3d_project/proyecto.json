@@ -1,0 +1,290 @@
+{
+ "version": 4,
+ "contenedor": {
+  "formato": 2,
+  "generador": "Whisk3D"
+ },
+ "compilar": {
+  "modoVentana": "pantallaCompleta",
+  "orientacion": "horizontal",
+  "fisica": true,
+  "sonido": true,
+  "volumen": 100,
+  "debug": false,
+  "assets": "sueltos",
+  "plataforma": "linux-deb",
+  "uid": "0x43533135"
+ },
+ "fps": 60,
+ "fullscreen": false,
+ "reproduciendo": false,
+ "mallas": [],
+ "escena": {
+  "objetos": [
+   {
+    "tipo": "rutina",
+    "nombre": "Constructor",
+    "constructor": true,
+    "version": 2,
+    "pasos": [
+     {
+      "paso": "colorLimpieza",
+      "id": 1,
+      "n": [
+       0.55,
+       0.62,
+       0.7,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "tipo": "rutina",
+    "nombre": "Limpiar pantalla",
+    "version": 2,
+    "pasos": [
+     {
+      "paso": "limpiar",
+      "id": 1,
+      "entero": 3
+     }
+    ]
+   },
+   {
+    "tipo": "ui",
+    "archivo": "ui/hud.w3dui"
+   },
+   {
+    "tipo": "coleccion",
+    "nombre": "CounterStrike15_de_dust2",
+    "pos": [
+     0,
+     0,
+     0
+    ],
+    "rot": [
+     0,
+     0,
+     0
+    ],
+    "escala": [
+     1,
+     1,
+     1
+    ],
+    "hijos": [
+     {
+      "tipo": "luz",
+      "nombre": "Sol_Desert",
+      "pos": [
+       15,
+       45,
+       -10
+      ],
+      "rot": [
+       -55,
+       25,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ],
+      "color": [
+       1.0,
+       0.95,
+       0.85
+      ]
+     },
+     {
+      "tipo": "culling",
+      "nombre": "Mapa_de_dust2",
+      "pos": [
+       0,
+       0,
+       0
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ],
+      "soloCamaraActiva": true,
+      "distanciaMax": 0,
+      "metodo": "bsp",
+      "bsp": "bsp/de_dust2.w3dbsp",
+      "hijos": []
+     },
+     {
+      "tipo": "vacio",
+      "nombre": "BombsiteA",
+      "pos": [
+       -39.01447802895606,
+       1.219202438404877,
+       -68.2753365506731
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ]
+     },
+     {
+      "tipo": "vacio",
+      "nombre": "BombsiteB",
+      "pos": [
+       29.260858521717047,
+       3.657607315214631,
+       -62.58572517145035
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ]
+     },
+     {
+      "tipo": "vacio",
+      "nombre": "GameMode_DE",
+      "pos": [
+       0,
+       0,
+       0
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ],
+      "scripts": [
+       {
+        "archivo": "scripts/cs_config.lua"
+       },
+       {
+        "archivo": "scripts/cs_gamemode_de.lua"
+       }
+      ]
+     },
+     {
+      "tipo": "vacio",
+      "nombre": "Jugador",
+      "pos": [
+       11.379222758445518,
+       -2.235204470408941,
+       -62.58572517145035
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ],
+      "scripts": [
+       {
+        "archivo": "scripts/cs_movement.lua",
+        "refs": {
+         "camara": "CamaraFPS",
+         "mundo": "Mapa_de_dust2"
+        }
+       },
+       {
+        "archivo": "scripts/cs_weapons.lua",
+        "refs": {
+         "camara": "CamaraFPS"
+        }
+       }
+      ],
+      "hijos": [
+       {
+        "tipo": "camara",
+        "nombre": "CamaraFPS",
+        "pos": [
+         0,
+         1.625,
+         0
+        ],
+        "rot": [
+         0,
+         0,
+         0
+        ],
+        "escala": [
+         1,
+         1,
+         1
+        ],
+        "fov": 90,
+        "orto": false,
+        "near": 0.05,
+        "far": 250
+       }
+      ]
+     },
+     {
+      "tipo": "vacio",
+      "nombre": "bot_T1",
+      "pos": [
+       -21.132842265684534,
+       4.470408940817882,
+       17.88163576327153
+      ],
+      "rot": [
+       0,
+       0,
+       0
+      ],
+      "escala": [
+       1,
+       1,
+       1
+      ],
+      "scripts": [
+       {
+        "archivo": "scripts/cs_bots.lua",
+        "refs": {
+         "equipo": "T",
+         "objetivoA": "BombsiteA",
+         "objetivoB": "BombsiteB",
+         "jugador": "Jugador"
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "materiales": [],
+ "sesion": {
+  "frame": 1,
+  "activo": "",
+  "seleccion": []
+ },
+ "layout": "Layout {\n  ViewportRow {\n    ViewportColumn {\n      Viewport3D {\n        posX: 0\n        posY: 4\n        posZ: 12\n        orbitDistance: 12\n        ViewFromCameraActive: true\n        view: Rendered\n      }\n    }\n  }\n}\n"
+}
