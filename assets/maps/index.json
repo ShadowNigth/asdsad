@@ -1,0 +1,122 @@
+[
+  {
+    "name": "de_aztec",
+    "skybox": "doom1",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_aztec.csmap.json"
+  },
+  {
+    "name": "de_cbble",
+    "skybox": "dusk",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_cbble.csmap.json"
+  },
+  {
+    "name": "de_chateau",
+    "skybox": "cx",
+    "spawnsCT": 18,
+    "spawnsT": 17,
+    "bombsites": 2,
+    "meta": "maps/de_chateau.csmap.json"
+  },
+  {
+    "name": "de_dust",
+    "skybox": "des",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_dust.csmap.json"
+  },
+  {
+    "name": "de_dust2",
+    "skybox": "des",
+    "spawnsCT": 20,
+    "spawnsT": 20,
+    "bombsites": 2,
+    "meta": "maps/de_dust2.csmap.json"
+  },
+  {
+    "name": "de_inferno",
+    "skybox": "badlands",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_inferno.csmap.json"
+  },
+  {
+    "name": "de_nuke",
+    "skybox": "desert",
+    "spawnsCT": 10,
+    "spawnsT": 10,
+    "bombsites": 2,
+    "meta": "maps/de_nuke.csmap.json"
+  },
+  {
+    "name": "de_piranesi",
+    "skybox": "cx",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_piranesi.csmap.json"
+  },
+  {
+    "name": "de_prodigy",
+    "skybox": "dusk",
+    "spawnsCT": 10,
+    "spawnsT": 10,
+    "bombsites": 4,
+    "meta": "maps/de_prodigy.csmap.json"
+  },
+  {
+    "name": "de_storm",
+    "skybox": "de_storm",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_storm.csmap.json"
+  },
+  {
+    "name": "de_survivor",
+    "skybox": "snowlake_",
+    "spawnsCT": 10,
+    "spawnsT": 10,
+    "bombsites": 2,
+    "meta": "maps/de_survivor.csmap.json"
+  },
+  {
+    "name": "de_torn",
+    "skybox": "tornsky",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 4,
+    "meta": "maps/de_torn.csmap.json"
+  },
+  {
+    "name": "de_train",
+    "skybox": "trainyard",
+    "spawnsCT": 12,
+    "spawnsT": 12,
+    "bombsites": 2,
+    "meta": "maps/de_train.csmap.json"
+  },
+  {
+    "name": "de_vegas",
+    "skybox": "backalley",
+    "spawnsCT": 10,
+    "spawnsT": 10,
+    "bombsites": 2,
+    "meta": "maps/de_vegas.csmap.json"
+  },
+  {
+    "name": "de_vertigo",
+    "skybox": "tsccity_",
+    "spawnsCT": 16,
+    "spawnsT": 16,
+    "bombsites": 2,
+    "meta": "maps/de_vertigo.csmap.json"
+  }
+]
