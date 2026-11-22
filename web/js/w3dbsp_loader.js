@@ -28,13 +28,13 @@ export class CSMapData {
 
     static async load(mapName) {
         const m = new CSMapData();
-        const metaResp = await fetch(`assets/maps/${mapName}.csmap.json`);
+        const metaResp = await fetch(assetUrl(`maps/${mapName}.csmap.json`));
         if (!metaResp.ok) throw new Error(`Failed loading ${mapName}.csmap.json`);
         m.meta = await metaResp.json();
 
         const [w3dBuf, colBuf] = await Promise.all([
-            fetch(`assets/maps/${mapName}.w3dbsp`).then(r => r.arrayBuffer()),
-            fetch(`assets/maps/${mapName}.cscol.bin`).then(r => r.arrayBuffer()),
+            fetch(assetUrl(`maps/${mapName}.w3dbsp`)).then(r => r.arrayBuffer()),
+            fetch(assetUrl(`maps/${mapName}.cscol.bin`)).then(r => r.arrayBuffer()),
         ]);
 
         m._parseW3dBsp(w3dBuf);

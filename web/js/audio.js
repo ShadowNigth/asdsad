@@ -2,6 +2,8 @@
 //  audio.js — Motor WebAudio CS 1.5 con cache de WAVs reales, atenuacion 3D,
 //  paneo estereo y zumbido de Flashbang.
 // ============================================================================
+import { assetUrl } from "./asset_path.js";
+
 export class AudioEngine {
     constructor() {
         this.ctx = null;
@@ -33,7 +35,7 @@ export class AudioEngine {
 
         const p = (async () => {
             try {
-                const resp = await fetch(`assets/${relPath}`);
+                const resp = await fetch(assetUrl(relPath));
                 if (!resp.ok) return null;
                 const ab = await resp.arrayBuffer();
                 const buf = await this.ctx.decodeAudioData(ab);

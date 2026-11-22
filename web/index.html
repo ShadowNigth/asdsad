@@ -85,6 +85,22 @@
 
     <div id="clickPrompt" class="click-prompt hidden">Click en la pantalla para capturar el ratón (ESC: Menú / Cambiar Mapa)</div>
 
+    <div id="fileWarn" class="hidden" style="position:fixed;inset:0;z-index:99;background:rgba(10,12,10,0.96);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
+        <div style="max-width:640px;background:#1a1e18;border:2px solid #ffaa1d;padding:22px;border-radius:6px;line-height:1.6;">
+            <h2 style="color:#ffaa1d;margin-bottom:10px;">Abre el juego mediante servidor HTTP local</h2>
+            <p style="margin-bottom:12px;">El navegador bloquea los módulos WebGL/ES y los mapas <code>.w3dbsp</code> cuando se abre <code>index.html</code> directamente como <code>file://</code>.</p>
+            <p style="margin-bottom:12px;">En la carpeta raíz del proyecto ejecutá en una terminal:</p>
+            <pre style="background:#0c0f0c;padding:10px;border-radius:4px;color:#7ef27e;text-align:left;overflow-x:auto;">./JUGAR.sh
+# o manualmente:
+python3 tools/serve_cs15.py</pre>
+            <p style="margin-top:12px;">Y luego entrá en el navegador a: <b style="color:#ffcf6b;">http://localhost:8080</b></p>
+        </div>
+    </div>
+    <script>
+        if (location.protocol === "file:") {
+            document.getElementById("fileWarn").classList.remove("hidden");
+        }
+    </script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

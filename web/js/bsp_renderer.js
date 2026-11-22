@@ -3,6 +3,7 @@
 //  + Skybox TGA->PNG + Modelos GLB con animacion esqueletal + Efectos 3D.
 // ============================================================================
 import { GLBModel, mulMat4 } from "./mdl_loader.js";
+import { assetUrl } from "./asset_path.js";
 
 export function mat4Perspective(fovDeg, aspect, near, far, out) {
     const f = 1.0 / Math.tan((fovDeg * Math.PI) / 360.0);
@@ -411,14 +412,14 @@ export class BSPRenderer {
         }
 
         this.buckets = Array.from({ length: mapData.groups.length * mapData.materials.length }, () => []);
-        this.lightmapTex = await this.loadTexture(`assets/${mapData.meta.lightmap}`, true);
+        this.lightmapTex = await this.loadTexture(assetUrl(mapData.meta.lightmap), true);
         this.mapTextures = await Promise.all(
-            mapData.meta.materials.map(m => this.loadTexture(`assets/${m.tex}`, false))
+            mapData.meta.materials.map(m => this.loadTexture(assetUrl(m.tex), false))
         );
         const sky = mapData.meta.skybox || "des";
         this.skyTextures = {};
         await Promise.all(["ft", "bk", "lf", "rt", "up", "dn"].map(async s => {
-            this.skyTextures[s] = await this.loadTexture(`assets/skyboxes/${sky}_${s}.png`, true);
+            this.skyTextures[s] = await this.loadTexture(assetUrl(`skyboxes/${sky}_${s}.png`), true);
         }));
     }
 

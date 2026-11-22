@@ -2,6 +2,7 @@
 //  main.js — Nucleo ejecutable WebGL2 de Counter-Strike 1.5 Retail (Whisk3D)
 // ============================================================================
 import { CSMapData } from "./w3dbsp_loader.js";
+import { assetUrl, detectAssetBase } from "./asset_path.js";
 import { BSPRenderer } from "./bsp_renderer.js";
 import { BSPPhysics, PlayerMover, PM, SCALE } from "./physics.js";
 import { WEAPONS, BUY_MENU, createWeaponInstance } from "./weapons.js";
@@ -97,7 +98,7 @@ async function preloadCoreAssets() {
         "models/v_ak47.glb", "models/v_m4a1.glb", "models/v_awp.glb", "models/v_deagle.glb",
         "models/v_mp5.glb", "models/v_c4.glb", "models/v_hegrenade.glb", "models/v_flashbang.glb", "models/v_smokegrenade.glb",
     ];
-    await Promise.all(models.map(u => renderer.loadGLB(`assets/${u}`)));
+    await Promise.all(models.map(u => renderer.loadGLB(assetUrl(u))));
 }
 
 async function loadMap(mapName) {
@@ -886,17 +887,17 @@ function frame(ts) {
         makeModelMat(a.feetPos, a.yaw, m);
         const moving = Math.hypot(a.vel[0], a.vel[2]) > 0.25;
         const pref = a.ducking ? (moving ? ["crouchrun", "crouch_aim"] : ["crouch_idle", "crouch_aim"]) : (moving ? ["run", "walk"] : ["idle1", "ref_aim"]);
-        worldModels.push({ url: `assets/models/player_${a.skin}.glb`, modelMat: m, animPrefixes: pref, animTime: a.animTime });
+        worldModels.push({ url: assetUrl(`models/player_${a.skin}.glb`), modelMat: m, animPrefixes: pref, animTime: a.animTime });
     }
     if (game.c4Planted || game.c4DroppedPos) {
         const m = new Float32Array(16);
         makeModelMat(game.c4Planted ? game.c4Pos : game.c4DroppedPos, 0, m);
-        worldModels.push({ url: "assets/models/w_c4.glb", modelMat: m, animPrefixes: ["idle"], animTime: 0 });
+        worldModels.push({ url: assetUrl("models/w_c4.glb"), modelMat: m, animPrefixes: ["idle"], animTime: 0 });
     }
 
     // Render 3D Scene (Whisk3D .w3dbsp + Skybox + GLB + FX)
     const reloadFrac = (now < player.reloadingUntil) ? Math.sin(((player.reloadingUntil - now) / (activeWep?.def.reload || 2)) * Math.PI) : 0;
-    const vmUrl = activeWep ? `assets/${activeWep.def.vm}` : null;
+    const vmUrl = activeWep ? assetUrl(activeWep.def.vm) : null;
     renderer.render(
         { pos: camPos, yaw: camYaw, pitch: camPitch, fov: camFov },
         {
@@ -942,7 +943,8 @@ function frame(ts) {
 }
 
 async function init() {
-    const idxResp = await fetch("assets/maps/index.json");
+    await detectAssetBase();
+    const idxResp = await fetch(assetUrl("maps/index.json"));
     const idx = await idxResp.json();
     const mapList = Array.isArray(idx) ? idx : (idx.maps || []);
     for (const m of mapList) {
